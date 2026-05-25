@@ -7,3 +7,7 @@
     "sys-init": "node init-projector.js"
   }
 }
+"scripts": {
+  "sys-init": "node init-projector.js",
+  "start-download": "node download-manager.js"
+}
