@@ -1,6 +1,5 @@
 name: Mon-100-8K System Verification
 
-# Trigger the workflow on every push or pull request to the main branch
 on:
   push:
     branches: [ main, master ]
@@ -13,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20.x] # Runs on modern LTS Node environment
+        node-version: [20.x]
 
     steps:
       - name: 🔍 Checkout Repository Code
@@ -23,15 +22,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          # Removed the strict 'cache: npm' constraint to bypass the lockfile error
 
       - name: 📦 Install Project Dependencies
-        run: |
-          if [ -f package-lock.json ]; then
-            npm ci
-          else
-            npm install
-          fi
+        run: npm install
 
       - name: 📁 Initialize Projector Directory Framework
         run: npm run sys-init
@@ -40,3 +34,4 @@ jobs:
         run: |
           npm run start-download
           npm run fetch-updates
+          npm run start-video-chat
