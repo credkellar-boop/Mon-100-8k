@@ -1,0 +1,9 @@
+{
+  "name": "mon-100-8k",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "init-projector.js",
+  "scripts": {
+    "sys-init": "node init-projector.js"
+  }
+}
