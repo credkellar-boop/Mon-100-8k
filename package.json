@@ -1,18 +1,27 @@
 {
   "name": "mon-100-8k",
   "version": "1.0.0",
+  "description": "Mon-100-8K: A hybrid 35-100 inch 8K triple-laser projector driven by Gemini AI with high-speed web browsing, NVMe local storage downloading, cloud auto-offloading, cinematic Dolby Atmos audio, and smart popup AI webcam communication layers.",
   "type": "module",
   "main": "init-projector.js",
   "scripts": {
-    "sys-init": "node init-projector.js"
+    "sys-init": "node init-projector.js",
+    "start-download": "node download-manager.js",
+    "fetch-updates": "node network-worker.js",
+    "start-video-chat": "node camera-controller.js",
+    "verify-all": "npm run sys-init && npm run start-download && npm run fetch-updates && npm run start-video-chat"
+  },
+  "keywords": [
+    "8k-projector",
+    "gemini-ai",
+    "smart-home-cinema",
+    "cloud-storage-sync",
+    "ai-webcam",
+    "dolby-atmos-audio"
+  ],
+  "author": "Developer",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5"
   }
-}
-"scripts": {
-  "sys-init": "node init-projector.js",
-  "start-download": "node download-manager.js"
-}
-"scripts": {
-  "sys-init": "node init-projector.js",
-  "start-download": "node download-manager.js",
-  "fetch-updates": "node network-worker.js"
 }
